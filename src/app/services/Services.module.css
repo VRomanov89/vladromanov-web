@@ -1,0 +1,121 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+}
+.hero p {
+  color: #444;
+  font-size: 1.15rem;
+}
+
+.cardsSection {
+  margin-bottom: 2.5rem;
+}
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  transition: box-shadow 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+.card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.cardHeader h2 {
+  font-size: 1.1rem;
+  margin: 0;
+  flex: 1;
+}
+.price {
+  color: #0070f3;
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+.expandBtn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #888;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: color 0.2s;
+}
+.expandBtn:hover {
+  color: #0070f3;
+}
+.short {
+  color: #333;
+  margin: 0.7rem 0 0.2rem 0;
+  font-size: 1.01rem;
+}
+.details {
+  margin-top: 0.5rem;
+  background: #f7fafd;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  color: #222;
+  font-size: 0.98rem;
+  animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
+}
+.ctaSection {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.ctaBtn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #0070f3;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,112,243,0.08);
+}
+.ctaBtn:hover {
+  background: #0051a3;
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+  .cardsGrid {
+    gap: 1.2rem;
+  }
+  .card {
+    padding: 1rem 0.7rem 0.7rem 0.7rem;
+  }
+  .ctaBtn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+} 

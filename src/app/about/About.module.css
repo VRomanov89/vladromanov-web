@@ -1,0 +1,283 @@
+/* --- HERO SECTION --- */
+.heroSection {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 48px 0 32px 0;
+  max-width: 900px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.heroImageWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heroImage {
+  border-radius: 50%;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  object-fit: cover;
+  width: 180px;
+  height: 180px;
+  background: #e8e8e8;
+}
+.heroTextBlock {
+  flex: 1 1 0;
+  min-width: 220px;
+}
+.heroName {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+.heroHeadline {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0070f3;
+}
+.heroSummary {
+  font-size: 1.08rem;
+  color: #444;
+  margin-bottom: 0;
+}
+
+/* --- HIGHLIGHTS --- */
+.highlightsSection {
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  padding: 0 0 16px 0;
+}
+.highlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.highlightCard {
+  background: linear-gradient(120deg, #f8fafc 60%, #e8f0fe 100%);
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 32px 32px 28px 32px;
+  min-width: 140px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.25s, transform 0.25s, background 0.25s;
+  cursor: pointer;
+  border: 1.5px solid #e0e7ef;
+}
+.highlightCard:hover {
+  box-shadow: 0 8px 32px rgba(0,112,243,0.13);
+  background: linear-gradient(120deg, #e8f0fe 60%, #f8fafc 100%);
+  transform: translateY(-6px) scale(1.04);
+  border-color: #0070f3;
+}
+.highlightTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+.highlightSubtitle {
+  font-size: 1.02rem;
+  color: #0070f3;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+/* --- TIMELINE --- */
+.timelineSection {
+  max-width: 900px;
+  margin: 0 auto 32px auto;
+  padding: 0 0 16px 0;
+}
+.timelineHeading {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #1a1a1a;
+  text-align: left;
+}
+.timelineGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.timelineCard {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  padding: 24px 24px 18px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.timelineCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+}
+.timelineLogo {
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e0e7ef;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  object-fit: contain;
+  width: 48px;
+  height: 48px;
+}
+.timelineCardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.timelineCardTitle {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+}
+.timelineCardCompany {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #0070f3;
+}
+.timelineCardDate {
+  color: #888;
+  font-size: 0.98rem;
+  font-weight: 400;
+}
+.timelineCardSummary {
+  color: #333;
+  font-size: 1rem;
+}
+.timelineCardDetails {
+  background: #f7fafd;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  margin-top: 0.5rem;
+  color: #222;
+  font-size: 0.98rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.timelineCardPre {
+  margin: 0;
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  white-space: pre-line;
+}
+.timelineExpandBtn {
+  background: none;
+  border: none;
+  color: #0070f3;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+  align-self: flex-start;
+  padding: 0;
+}
+
+/* --- RESUME CTA --- */
+.resumeCtaWrap {
+  text-align: center;
+  margin: 32px 0 0 0;
+}
+.resumeCtaBtn {
+  background: #0070f3;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.8rem 2.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0,112,243,0.08);
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s;
+}
+.resumeCtaBtn:hover {
+  background: #0056b3;
+}
+
+/* --- CONTACT CTA --- */
+.contactCtaSection {
+  background: linear-gradient(90deg, #1a1a1a 0%, #383838 100%);
+  text-align: center;
+  padding: 48px 0 56px 0;
+  margin-top: 40px;
+}
+.contactCtaText {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+.contactCtaBtn {
+  background: #fff;
+  color: #1a1a1a;
+  border-radius: 32px;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  border: none;
+  display: inline-block;
+}
+.contactCtaBtn:hover {
+  background: #ececec;
+  color: #383838;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .heroSection {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+  }
+  .highlightsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .heroSection {
+    padding: 32px 0 16px 0;
+  }
+  .heroImage {
+    width: 100px;
+    height: 100px;
+  }
+  .highlightsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .timelineSection {
+    padding: 0 0 8px 0;
+  }
+  .timelineCard {
+    padding: 14px 6px 10px 6px;
+  }
+  .contactCtaText {
+    font-size: 1.2rem;
+  }
+  .contactCtaBtn {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+} 
