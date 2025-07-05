@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getLatestYouTubeVideos, formatDuration, formatViewCount, formatDate } from "../../lib/youtube";
-import styles from "./LiveEpisodes.module.css";
+import styles from "../../components/speaking/LiveEpisodes.module.css";
 
 export default async function InDepthConversations() {
   console.log('InDepthConversations component starting...');
