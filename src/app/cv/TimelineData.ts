@@ -66,7 +66,7 @@ Company: Kraft Heinz Company (https://www.kraftheinzcompany.com/)`,
 - Provided technical leadership and training to plant teams on automation troubleshooting and best practices
 - Collaborated with production, quality, and IT/OT teams to drive operational excellence and digital transformation
 - Platforms used: Rockwell ControlLogix, Siemens S7, FactoryTalk, Ignition, and related systems`,
-    logo: "/logos/post.webp",
+    logo: "/logos/post.png",
   },
   {
     title: "MBA | Masters in Business Administration - Finance and Business Strategy",

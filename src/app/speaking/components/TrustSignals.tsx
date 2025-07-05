@@ -5,7 +5,12 @@ const trustLogos = [
   { src: "/logos/manufacturinghub.png", alt: "Manufacturing Hub" },
   { src: "/logos/solisplc.png", alt: "SolisPLC" },
   { src: "/logos/kerno.png", alt: "Kerno" },
-  { src: "/logos/joltek.png", alt: "Joltek" }
+  { src: "/logos/joltek.png", alt: "Joltek" },
+  { src: "/logos/kraft.png", alt: "Kraft Heinz" },
+  { src: "/logos/post.png", alt: "Post Holdings" },
+  { src: "/logos/pg.png", alt: "Procter & Gamble" },
+  { src: "/logos/mcgill.png", alt: "McGill University" },
+  { src: "/logos/concordia.png", alt: "Concordia University" }
 ];
 
 const testimonials = [
@@ -33,9 +38,11 @@ export default function TrustSignals() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={120}
-                height={60}
+                width={0}
+                height={0}
+                sizes="100vw"
                 className={styles.trustLogo}
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
           ))}

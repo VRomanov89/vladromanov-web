@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const TRANSISTOR_API_KEY = process.env.TRANSISTOR_API_KEY;
+const TRANSISTOR_SHOW_ID = process.env.TRANSISTOR_SHOW_ID;
 const TRANSISTOR_BASE_URL = 'https://api.transistor.fm/v1';
 
 export async function GET(request: NextRequest) {
@@ -11,36 +12,17 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  try {
-    // First, get the show ID for Manufacturing Hub
-    const showsResponse = await fetch(`${TRANSISTOR_BASE_URL}/shows`, {
-      headers: {
-        'Authorization': `Bearer ${TRANSISTOR_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-    });
-
-    if (!showsResponse.ok) {
-      throw new Error(`Failed to fetch shows: ${showsResponse.statusText}`);
-    }
-
-    const showsData = await showsResponse.json();
-    const manufacturingHubShow = showsData.data.find((show: any) => 
-      show.attributes.title.toLowerCase().includes('manufacturing hub')
+  if (!TRANSISTOR_SHOW_ID) {
+    return NextResponse.json(
+      { error: 'Transistor Show ID not configured' },
+      { status: 500 }
     );
+  }
 
-    if (!manufacturingHubShow) {
-      return NextResponse.json(
-        { error: 'Manufacturing Hub show not found' },
-        { status: 404 }
-      );
-    }
-
-    const showId = manufacturingHubShow.id;
-
-    // Fetch the latest episodes for the show
+  try {
+    // Fetch the latest episodes for the show using the environment variable
     const episodesResponse = await fetch(
-      `${TRANSISTOR_BASE_URL}/episodes?show_id=${showId}&page[number]=1&page[size]=6`,
+      `${TRANSISTOR_BASE_URL}/episodes?show_id=${TRANSISTOR_SHOW_ID}&page[number]=1&page[size]=6`,
       {
         headers: {
           'Authorization': `Bearer ${TRANSISTOR_API_KEY}`,
