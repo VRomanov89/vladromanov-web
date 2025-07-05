@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
-const CHANNEL_ID = 'UC6JpBeS_6JhUwfGF8RgLCIQ';
+const CHANNEL_ID = 'UCdL1dvzewTAqLyxfIDZz4fw';
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
 
 export interface YouTubeVideo {
