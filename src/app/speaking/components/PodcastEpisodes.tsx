@@ -4,7 +4,9 @@ import PodcastCard from "../../components/podcast/PodcastCard";
 import styles from "../Speaking.module.css";
 
 export default async function PodcastEpisodes() {
+  console.log('PodcastEpisodes component starting...');
   const episodes = await getLatestPodcastEpisodes();
+  console.log('Episodes received in component:', episodes.length, episodes);
 
   return (
     <section className={styles.podcastSection}>
@@ -26,7 +28,7 @@ export default async function PodcastEpisodes() {
           </>
         ) : (
           <div className={styles.noEpisodes}>
-            <p>Loading latest episodes...</p>
+            <p>No episodes found. Debug: {JSON.stringify(episodes)}</p>
           </div>
         )}
       </div>

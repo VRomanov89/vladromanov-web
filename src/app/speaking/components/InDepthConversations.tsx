@@ -1,56 +1,86 @@
-import styles from "../Speaking.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import { getLatestYouTubeVideos, formatDuration, formatViewCount, formatDate } from "../../lib/youtube";
+import styles from "./LiveEpisodes.module.css";
 
-const conversations = [
-  {
-    id: "panel-1",
-    title: "Panelist – ICS Cybersecurity Summit 2024",
-    host: "Industrial Cybersecurity Institute",
-    description: "Leading discussions on securing critical infrastructure in an increasingly connected world.",
-    videoId: "dQw4w9WgXcQ" // Placeholder
-  },
-  {
-    id: "panel-2",
-    title: "Guest Expert – Manufacturing Leadership Roundtable",
-    host: "Manufacturing Executive Network",
-    description: "Sharing insights on digital transformation strategies for mid-market manufacturers.",
-    videoId: "dQw4w9WgXcQ" // Placeholder
-  },
-  {
-    id: "panel-3",
-    title: "Keynote Speaker – Industry 4.0 Conference",
-    host: "Smart Manufacturing Alliance",
-    description: "Presenting on the convergence of IT and OT systems in modern manufacturing.",
-    videoId: "dQw4w9WgXcQ" // Placeholder
-  }
-];
+export default async function InDepthConversations() {
+  console.log('InDepthConversations component starting...');
+  const videos = await getLatestYouTubeVideos();
+  console.log('Videos received in component:', videos.length, videos);
 
-export default function InDepthConversations() {
   return (
-    <section className={styles.conversationsSection}>
+    <section className={styles.liveEpisodesSection}>
       <div className={styles.container}>
         <h2 className={styles.sectionTitle}>In-Depth Conversations</h2>
-        <div className={styles.conversationsGrid}>
-          {conversations.map((conversation, index) => (
-            <div key={conversation.id} className={styles.conversationCard}>
-              <div className={styles.conversationVideo}>
-                <iframe
-                  src={`https://www.youtube.com/embed/${conversation.videoId}`}
-                  title={conversation.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className={styles.conversationIframe}
-                />
-              </div>
-              <div className={styles.conversationContent}>
-                <h3 className={styles.conversationTitle}>{conversation.title}</h3>
-                <p className={styles.conversationHost}>{conversation.host}</p>
-                <p className={styles.conversationDescription}>{conversation.description}</p>
-              </div>
+        
+        {videos.length > 0 ? (
+          <>
+            <div className={styles.videosGrid}>
+              {videos.map((video) => (
+                <VideoCard key={video.id} video={video} />
+              ))}
             </div>
-          ))}
-        </div>
+            <div className={styles.ctaSection}>
+              <Link href="https://www.youtube.com/@ManufacturingHub" className={styles.seeAllButton} target="_blank" rel="noopener noreferrer">
+                View All Episodes
+              </Link>
+            </div>
+          </>
+        ) : (
+          <div className={styles.noVideos}>
+            <p>No videos found. Debug: {JSON.stringify(videos)}</p>
+          </div>
+        )}
       </div>
     </section>
+  );
+}
+
+function VideoCard({ video }: { video: any }) {
+  const truncatedDescription = video.description.length > 120 
+    ? video.description.substring(0, 120) + '...' 
+    : video.description;
+
+  return (
+    <div className={styles.videoCard}>
+      <div className={styles.videoThumbnail}>
+        <Image
+          src={video.thumbnail}
+          alt={video.title}
+          width={320}
+          height={180}
+          className={styles.thumbnail}
+        />
+        <div className={styles.playButton}>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+        {video.duration && (
+          <div className={styles.duration}>
+            {formatDuration(video.duration)}
+          </div>
+        )}
+      </div>
+      
+      <div className={styles.videoContent}>
+        <h3 className={styles.videoTitle}>
+          <Link href={video.url} target="_blank" rel="noopener noreferrer">
+            {video.title}
+          </Link>
+        </h3>
+        
+        <div className={styles.videoMeta}>
+          <span className={styles.publishedDate}>{formatDate(video.publishedAt)}</span>
+          {video.viewCount && (
+            <span className={styles.viewCount}>{formatViewCount(video.viewCount)}</span>
+          )}
+        </div>
+        
+        {truncatedDescription && (
+          <p className={styles.videoDescription}>{truncatedDescription}</p>
+        )}
+      </div>
+    </div>
   );
 } 
