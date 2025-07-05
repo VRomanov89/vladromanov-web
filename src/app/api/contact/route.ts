@@ -7,7 +7,7 @@ if (!process.env.RESEND_API_KEY) {
 }
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const EMAIL = 'vlad@joltek.com';
+const EMAIL = 'vlad@email.joltek.com';
 
 export async function POST(req: NextRequest) {
   try {
