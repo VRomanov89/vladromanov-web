@@ -35,7 +35,7 @@ export default function PodcastCard({ episode }: PodcastCardProps) {
       <div className={styles.content}>
         <div className={styles.meta}>
           <span className={styles.episodeNumber}>Episode {episode.episodeNumber}</span>
-          <span className={styles.duration}>{formatDuration(episode.duration)}</span>
+          <span className={styles.duration}>{episode.duration ? formatDuration(episode.duration) : ''}</span>
         </div>
         
         <h3 className={styles.title}>{episode.title}</h3>
