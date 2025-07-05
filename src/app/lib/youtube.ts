@@ -2,8 +2,14 @@ import { YouTubeVideo } from '../api/youtube-live/route';
 
 export async function getLatestYouTubeVideos(): Promise<YouTubeVideo[]> {
   try {
-    // Always use a relative URL for Next.js API routes
-    const apiUrl = '/api/youtube-live';
+    let apiUrl = '/api/youtube-live';
+    // If running on the server, use an absolute URL
+    if (typeof window === 'undefined') {
+      const base =
+        process.env.NEXT_PUBLIC_BASE_URL ||
+        (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000');
+      apiUrl = `${base}/api/youtube-live`;
+    }
     const response = await fetch(apiUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
     });
