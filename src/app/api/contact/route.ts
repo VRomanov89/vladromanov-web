@@ -86,20 +86,48 @@ Consent: ${data.consent ? 'Yes' : 'No'}
 
 ---
 Sent from vladromanov.com contact form
+Timestamp: ${new Date().toISOString()}
 `;
     
-    // Send email
+    // Send email with delivery tracking
     try {
-      await resend.emails.send({
+      const emailResponse = await resend.emails.send({
         from: EMAIL,
         to: EMAIL,
         subject,
         text: body,
       });
       
-      return NextResponse.json({ success: true });
+      // Log successful email delivery
+      console.log('Email sent successfully:', {
+        response: emailResponse,
+        timestamp: new Date().toISOString(),
+        contactFormData: {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          reason: data.reason
+        }
+      });
+      
+      return NextResponse.json({ 
+        success: true,
+        delivered: true
+      });
+      
     } catch (emailError: any) {
-      console.error('Resend email error:', emailError);
+      console.error('Resend email error:', {
+        error: emailError,
+        message: emailError?.message,
+        statusCode: emailError?.statusCode,
+        timestamp: new Date().toISOString(),
+        contactFormData: {
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          reason: data.reason
+        }
+      });
       
       // Handle specific Resend errors
       if (emailError?.message?.includes('API key')) {
@@ -114,13 +142,22 @@ Sent from vladromanov.com contact form
         }, { status: 429 });
       }
       
+      if (emailError?.message?.includes('from address')) {
+        return NextResponse.json({ 
+          error: 'Email configuration error. Please contact the site administrator.' 
+        }, { status: 500 });
+      }
+      
       return NextResponse.json({ 
         error: 'Failed to send email. Please try again later or contact us directly.' 
       }, { status: 500 });
     }
     
   } catch (err) {
-    console.error('Contact form error:', err);
+    console.error('Contact form error:', {
+      error: err,
+      timestamp: new Date().toISOString()
+    });
     
     // Handle JSON parsing errors
     if (err instanceof SyntaxError) {

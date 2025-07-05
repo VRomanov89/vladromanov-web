@@ -5,18 +5,23 @@ import styles from './Contact.module.css';
 export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState<string | null>(null);
+  const [deliveryInfo, setDeliveryInfo] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus('loading');
     setError(null);
+    setDeliveryInfo(null);
+    
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
+    
     // Honeypot check
     if (data.website) {
-      setStatus('success'); // Silently succeed
+      setStatus('success');
       return;
     }
+    
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -29,6 +34,20 @@ export default function ContactPage() {
       if (res.ok && result.success) {
         setStatus('success');
         form.reset();
+        
+        // Show delivery confirmation
+        if (result.delivered) {
+          setDeliveryInfo('✅ Email sent successfully! You should receive a copy shortly.');
+        } else {
+          setDeliveryInfo('⚠️ Form submitted, but email delivery status unknown.');
+        }
+        
+        // Log for debugging
+        console.log('Contact form submitted successfully:', {
+          delivered: result.delivered,
+          messageId: result.messageId,
+          timestamp: new Date().toISOString()
+        });
       } else {
         setStatus('error');
         // Display the specific error message from the API
@@ -88,7 +107,12 @@ export default function ContactPage() {
           <button className={styles.submitBtn} type="submit" disabled={status === 'loading'}>
             {status === 'loading' ? <span className={styles.spinner} aria-label="Loading" /> : 'Send Message'}
           </button>
-          {status === 'success' && <div className={styles.successMsg}>✅ Thanks! I'll be in touch shortly.</div>}
+          {status === 'success' && (
+            <>
+              <div className={styles.successMsg}>✅ Thanks! I'll be in touch shortly.</div>
+              {deliveryInfo && <div className={styles.successMsg} style={{fontSize: '0.9rem', marginTop: '8px'}}>{deliveryInfo}</div>}
+            </>
+          )}
           {status === 'error' && <div className={styles.errorMsg}>{error}</div>}
         </form>
       </section>
