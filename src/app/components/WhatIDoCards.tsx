@@ -1,4 +1,4 @@
-import styles from "../page.module.css";
+import styles from "../about/About.module.css";
 import ConsultingIcon from "./icons/ConsultingIcon";
 import SpeakingIcon from "./icons/SpeakingIcon";
 import LeadershipIcon from "./icons/LeadershipIcon";
@@ -6,36 +6,40 @@ import TrainingIcon from "./icons/TrainingIcon";
 
 const cards = [
   {
-    icon: <ConsultingIcon className={styles.cardIcon} />,
+    icon: <ConsultingIcon className={styles.highlightIcon} />,
     title: "Strategic Consulting",
-    desc: "Modernizing operations, digital transformation, and manufacturing strategy."
+    subtitle: "Modernizing operations, digital transformation, and manufacturing strategy."
   },
   {
-    icon: <SpeakingIcon className={styles.cardIcon} />,
+    icon: <SpeakingIcon className={styles.highlightIcon} />,
     title: "Speaking & Media",
-    desc: "Keynotes, panels, and media appearances on industry leadership."
+    subtitle: "Keynotes, panels, and media appearances on industry leadership."
   },
   {
-    icon: <LeadershipIcon className={styles.cardIcon} />,
+    icon: <LeadershipIcon className={styles.highlightIcon} />,
     title: "Fractional Leadership",
-    desc: "Executive-level guidance for scaling teams and initiatives."
+    subtitle: "Executive-level guidance for scaling teams and initiatives."
   },
   {
-    icon: <TrainingIcon className={styles.cardIcon} />,
+    icon: <TrainingIcon className={styles.highlightIcon} />,
     title: "Technical Training & Content",
-    desc: "Workshops, courses, and resources for upskilling industrial teams."
+    subtitle: "Workshops, courses, and resources for upskilling industrial teams."
   }
 ];
 
 export default function WhatIDoCards() {
   return (
-    <section className={styles.whatIDoSection}>
-      <div className={styles.whatIDoGrid}>
-        {cards.map(card => (
-          <div className={styles.whatIDoCard} key={card.title}>
+    <section className={styles.highlightsSection}>
+      <div className={styles.highlightsGrid}>
+        {cards.map((card, index) => (
+          <div
+            className={styles.highlightCard}
+            key={card.title}
+            style={{ animationDelay: `${index * 0.1}s` }}
+          >
             {card.icon}
-            <h3 className={styles.cardTitle}>{card.title}</h3>
-            <p className={styles.cardDesc}>{card.desc}</p>
+            <div className={styles.highlightTitle}>{card.title}</div>
+            <div className={styles.highlightSubtitle}>{card.subtitle}</div>
           </div>
         ))}
       </div>

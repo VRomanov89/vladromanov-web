@@ -11,8 +11,14 @@ export default function AboutHighlights() {
   return (
     <section className={styles.highlightsSection}>
       <div className={styles.highlightsGrid}>
-        {highlights.map((h) => (
-          <div className={styles.highlightCard} key={h.title}>
+        {highlights.map((h, index) => (
+          <div 
+            className={styles.highlightCard} 
+            key={h.title}
+            style={{
+              animationDelay: `${index * 0.1}s`
+            }}
+          >
             <div className={styles.highlightTitle}>{h.title}</div>
             <div className={styles.highlightSubtitle}>{h.subtitle}</div>
           </div>

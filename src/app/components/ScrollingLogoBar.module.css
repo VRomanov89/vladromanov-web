@@ -1,0 +1,134 @@
+.logoScrollOuter {
+  width: 100%;
+  overflow: hidden;
+  /* background: #f8fafc; */
+  padding: 16px 0;
+  /* border-radius: 16px; */
+  margin: 0 auto 32px auto;
+}
+
+.logoScrollTrack {
+  display: flex;
+  width: max-content;
+  animation: logoScrollTrack linear infinite;
+  will-change: transform;
+}
+
+.logoScrollRow {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.logoScrollLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 48px;
+  padding: 0 8px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.logoScrollLogo:hover {
+  opacity: 1;
+}
+
+@keyframes logoScrollTrack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .logoScrollRow {
+    gap: 28px;
+  }
+  .logoScrollLogo {
+    min-width: 56px;
+    min-height: 32px;
+    padding: 0 4px;
+  }
+  .logoScrollOuter {
+    padding: 8px 0;
+    /* border-radius: 10px; */
+  }
+}
+
+.marqueeWrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  padding: 0;
+  /* border-radius: 16px; */
+  margin: 0 auto 32px auto;
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 64s linear infinite;
+  will-change: transform;
+}
+
+.marqueeGroup {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  height: 88px;
+}
+
+.marqueeLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 128px;
+  height: 88px;
+  flex: 0 0 128px;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+  background: none;
+  box-sizing: border-box;
+}
+
+.marqueeLogo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.marqueeLogo:hover {
+  opacity: 1;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .marqueeGroup {
+    gap: 18px;
+  }
+  .marqueeLogo {
+    width: 56px;
+    height: 32px;
+    flex: 0 0 56px;
+  }
+  .marqueeWrapper {
+    padding: 8px 0;
+    /* border-radius: 10px; */
+  }
+} 

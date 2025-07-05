@@ -9,26 +9,35 @@ export interface TimelineItemProps {
 
 export const timelineItems: TimelineItemProps[] = [
   {
-    title: "Engineering Manager / Consultant",
-    company: "Post Holdings",
-    date: "2018 – 2022",
-    summary: "Led automation modernization, capital project delivery, and technical leadership across multiple Post Holdings manufacturing sites. Provided engineering management and consulting for SCADA, PLC, and OT infrastructure upgrades, line optimization, and plant reliability initiatives.",
-    details: `- Managed multi-site automation and controls modernization projects (SCADA, PLC, OT)
-- Delivered capital projects from concept through commissioning, including line upgrades and new installations
-- Led obsolescence assessments, risk mitigation, and reliability improvement programs
-- Provided technical leadership and training to plant teams on automation troubleshooting and best practices
-- Collaborated with production, quality, and IT/OT teams to drive operational excellence and digital transformation
-- Platforms used: Rockwell ControlLogix, Siemens S7, FactoryTalk, Ignition, and related systems`,
-    logo: "/logos/post.webp",
+    title: "Founder & CEO",
+    company: "SolisPLC",
+    date: "2020 – Present",
+    summary: "Founded SolisPLC to provide practical, hands-on training for industrial automation professionals. Built and led the platform's strategy, course development, and educational content focused on real-world applications of PLCs, SCADA, HMI, and more. Oversaw product growth, marketing, and long-term platform vision.",
+    details: `- Designed and launched industry-recognized automation training platform for engineers and technicians
+- Produced content for Rockwell, Siemens, Ignition, and other major automation systems
+- Created curriculum strategy and guided thousands of learners through platform-based training
+- Led product design, digital growth strategy, and audience development
+- Formed partnerships with automation professionals, OEMs, and integrators to ensure relevant, cutting-edge education
+
+Company: SolisPLC (https://www.solisplc.com)`,
+    logo: "/logos/solisplc.png",
   },
   {
-    title: "Founder / Consultant",
+    title: "Founder & Managing Partner",
     company: "Joltek",
     date: "2020 – Present",
-    summary: "Consulting across food, med device, and CPG",
-    details: `- Facility audits and modernization strategies  
-- Automation, SCADA/MES integration, and team training  
-- Clients include Post Holdings, Kraft Heinz, others`,
+    summary: "I lead Joltek, a consulting and integration firm helping manufacturers modernize operations, align IT and OT strategy, and build systems that deliver real business outcomes.",
+    details: `Through Joltek, I work directly with engineering, operations, and executive teams to drive value across:
+
+- Facility assessments focused on automation, digital maturity, and obsolescence risk  
+- SCADA, MES, and Unified Namespace architecture design and deployment  
+- IT/OT integration projects, from proof-of-concept to plant-wide rollout  
+- Fractional leadership for manufacturers undergoing transformation  
+- Cross-functional training to build internal technical and strategic capability  
+
+Joltek supports Fortune 500s and fast-scaling manufacturers, providing both strategy and hands-on execution. We don't just advise — we architect and deliver scalable solutions.
+
+Company: Joltek (https://www.joltek.com)`,
     logo: "/logos/joltek.png",
   },
   {
@@ -47,9 +56,30 @@ Company: Kraft Heinz Company (https://www.kraftheinzcompany.com/)`,
     logo: "/logos/kraft.png",
   },
   {
+    title: "Engineering Manager / Consultant",
+    company: "Post Holdings",
+    date: "2018 – 2022",
+    summary: "Led automation modernization, capital project delivery, and technical leadership across multiple Post Holdings manufacturing sites. Provided engineering management and consulting for SCADA, PLC, and OT infrastructure upgrades, line optimization, and plant reliability initiatives.",
+    details: `- Managed multi-site automation and controls modernization projects (SCADA, PLC, OT)
+- Delivered capital projects from concept through commissioning, including line upgrades and new installations
+- Led obsolescence assessments, risk mitigation, and reliability improvement programs
+- Provided technical leadership and training to plant teams on automation troubleshooting and best practices
+- Collaborated with production, quality, and IT/OT teams to drive operational excellence and digital transformation
+- Platforms used: Rockwell ControlLogix, Siemens S7, FactoryTalk, Ignition, and related systems`,
+    logo: "/logos/post.webp",
+  },
+  {
+    title: "MBA | Masters in Business Administration - Finance and Business Strategy",
+    company: "McGill University",
+    date: "2019 – 2021",
+    summary: "MBA with specialization in Finance and Business Strategy. Graduated with 3.7 GPA.",
+    details: `Completed a rigorous MBA at McGill University with a focus on finance and strategic leadership. Coursework covered advanced topics including corporate finance, global capital markets, mergers and acquisitions, investment strategy, innovation, and organizational transformation. Developed practical expertise in data analytics, financial modeling, and value creation while exploring business fundamentals from both managerial and shareholder perspectives. Strengthened negotiation skills, cross-functional decision-making, and the ability to lead in globally diverse environments.\n\nGPA: 3.7\nDegree: Master of Business Administration (MBA)\nSpecialization: Finance and Business Strategy\nInstitution: McGill University (https://www.mcgill.ca/)`,
+    logo: "/logos/mcgill.png",
+  },
+  {
     title: "PC&IS Engineer / Band 1 Manager",
     company: "Procter & Gamble",
-    date: "2014 – 2018",
+    date: "2014 – 2016",
     summary: `Served as a PC&IS Engineer at one of P&G's largest high-speed production sites, responsible for control system design, full-line installations, and technical leadership in a 24/7 manufacturing environment. Supported strategic automation initiatives across capital projects, new product development, and systems optimization.`,
     details: `- Led a 20% line speedup through control logic optimization and PLC enhancements
 - Directed the full installation of two high-speed manufacturing lines from concept to production
@@ -71,31 +101,32 @@ Company: Kraft Heinz Company (https://www.kraftheinzcompany.com/)`,
     logo: "/logos/concordia.png",
   },
   {
-    title: "MBA | Masters in Business Administration - Finance and Business Strategy",
-    company: "McGill University",
-    date: "2019 – 2021",
-    summary: "MBA with specialization in Finance and Business Strategy. Graduated with 3.7 GPA.",
-    details: `Completed a rigorous MBA at McGill University with a focus on finance and strategic leadership. Coursework covered advanced topics including corporate finance, global capital markets, mergers and acquisitions, investment strategy, innovation, and organizational transformation. Developed practical expertise in data analytics, financial modeling, and value creation while exploring business fundamentals from both managerial and shareholder perspectives. Strengthened negotiation skills, cross-functional decision-making, and the ability to lead in globally diverse environments.\n\nGPA: 3.7\nDegree: Master of Business Administration (MBA)\nSpecialization: Finance and Business Strategy\nInstitution: McGill University (https://www.mcgill.ca/)`,
-    logo: "/logos/mcgill.png",
+    title: "Co-Founder",
+    company: "Kerno",
+    date: "2021 – 2024",
+    summary: "Co-founded Kerno, a startup focused on streamlining incident response and troubleshooting for technical teams. Contributed to product definition, customer research, and operational execution during the early growth phase.",
+    details: `- Defined product vision focused on diagnostics and real-time observability
+- Led user interviews and prototype feedback with engineers and DevOps
+- Collaborated with CTO on roadmap prioritization and market alignment
+- Managed internal operations and go-to-market experiments
+- Supported pitch materials and early validation efforts
+- Raised €1.8M in venture capital funding
+
+Company: Kerno (https://www.kerno.io)`,
+    logo: "/logos/kerno.png",
   },
   {
-    title: "Host, Manufacturing Hub Podcast",
+    title: "Co-Host",
     company: "Manufacturing Hub",
-    date: "2021 – Present",
-    summary: "Over 200 episodes on automation & leadership",
-    details: `- Interviews with SCADA/MES, ERP, and robotics leaders  
-- Educational resource for engineers, consultants, execs  
-- 10K+ followers on LinkedIn & YouTube`,
-    logo: "/logos/mfghub.png",
+    date: "2020 – Present",
+    summary: "I co-host Manufacturing Hub, a podcast where we speak with leaders across the manufacturing ecosystem. With over 200 episodes published, we cover the technical and strategic shifts reshaping automation, IT/OT, and operations across industrial sectors.",
+    details: `- Hosted conversations with leaders in SCADA, MES, ERP, robotics, AI, and more
+- Engaged experts from Fortune 500s, integrators, OEMs, and startups
+- Built a loyal audience of engineers, plant managers, and senior decision-makers
+- Helped the community gain insight into emerging technologies and real-world strategies
+- Extended content into articles, clips, and educational resources used across industry
+
+Company: Manufacturing Hub (https://www.manufacturinghub.live)`,
+    logo: "/logos/manufacturinghub.png",
   },
-  {
-    title: "Writer, FRAME Dispatch Newsletter",
-    company: "FRAME",
-    date: "2024 – Present",
-    summary: "Weekly insights on operational excellence",
-    details: `- Bilingual newsletter with practical strategies  
-- Covers factory assessments, architecture, data, AI  
-- Aimed at engineers, plant managers, consultants`,
-    logo: "/logos/frame.png",
-  }
 ]; 

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Header.module.css";
 
 const navLinks = [
@@ -17,9 +17,22 @@ const navLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Only add .scrolled after client mount and scroll
+  let headerClass = styles.header;
+  if (isClient && scrolled) headerClass += ` ${styles.scrolled}`;
 
   return (
-    <header className={styles.header}>
+    <header className={headerClass}>
       <div className={styles.logo}><Link href="/">Vladimir Romanov</Link></div>
       <nav className={styles.nav}>
         <ul className={styles.navList}>

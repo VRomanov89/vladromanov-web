@@ -79,3 +79,7 @@ a {
     color-scheme: dark;
   }
 }
+
+main {
+  margin-top: 64px;
+}
