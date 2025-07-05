@@ -1,4 +1,4 @@
-import { getLatestPodcastEpisodes } from "../lib/podcast";
+import { getLatestPodcastEpisodes } from "../lib/rss";
 import PodcastCard from "../components/podcast/PodcastCard";
 import styles from "./Podcast.module.css";
 
