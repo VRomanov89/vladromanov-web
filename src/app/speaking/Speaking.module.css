@@ -224,4 +224,506 @@
     font-size: 1rem;
     padding: 0.7rem 1.2rem;
   }
+}
+
+/* --- HERO SECTION --- */
+.heroSection {
+  background: linear-gradient(135deg, #f8fafc 0%, #e8f0fe 100%);
+  padding: 80px 0 64px 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  background: #0070f3;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 32px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid #0070f3;
+}
+
+.primaryCta:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.secondaryCta {
+  background: transparent;
+  color: #0070f3;
+  padding: 14px 32px;
+  border-radius: 32px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid #0070f3;
+}
+
+.secondaryCta:hover {
+  background: #0070f3;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* --- CONTAINER --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- SECTION TITLES --- */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* --- FEATURED APPEARANCES --- */
+.featuredSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.videosGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+.videoCard {
+  background: #f8fafc;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.videoContent {
+  padding: 32px;
+}
+
+.videoTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.videoContext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.videoQuote {
+  font-style: italic;
+  color: #0070f3;
+  font-size: 1.1rem;
+  border-left: 4px solid #0070f3;
+  padding-left: 16px;
+  margin: 0;
+}
+
+/* --- PODCAST EPISODES --- */
+.podcastSection {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.podcastGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.podcastCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.podcastCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.podcastThumbnail {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #e8f0fe 0%, #f8fafc 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.playButton {
+  width: 48px;
+  height: 48px;
+  background: #0070f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.podcastCard:hover .playButton {
+  transform: scale(1.1);
+}
+
+.podcastTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.podcastGuest {
+  font-size: 0.95rem;
+  color: #0070f3;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.podcastDescription {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.podcastDuration {
+  font-size: 0.85rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.podcastCta {
+  text-align: center;
+}
+
+.seeAllButton {
+  background: transparent;
+  color: #0070f3;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #0070f3;
+  transition: all 0.2s ease;
+}
+
+.seeAllButton:hover {
+  background: #0070f3;
+  color: white;
+}
+
+/* --- IN-DEPTH CONVERSATIONS --- */
+.conversationsSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.conversationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.conversationCard {
+  background: #f8fafc;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.conversationCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.conversationVideo {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+
+.conversationIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.conversationContent {
+  padding: 24px;
+}
+
+.conversationTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.conversationHost {
+  font-size: 0.95rem;
+  color: #0070f3;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.conversationDescription {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* --- SPEAKING TOPICS --- */
+.topicsSection {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.topicsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.topicCard {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e0e7ef;
+}
+
+.topicCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-color: #0070f3;
+}
+
+.topicTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.topicDescription {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- TRUST SIGNALS --- */
+.trustSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.logosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 32px;
+  margin-bottom: 64px;
+  align-items: center;
+}
+
+.logoItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.trustLogo {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  filter: grayscale(100%);
+}
+
+.logoItem:hover .trustLogo {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.testimonialCard {
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  border: 1px solid #e0e7ef;
+}
+
+.testimonialQuote {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.testimonialAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testimonialAuthor strong {
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.testimonialAuthor span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .heroCtas {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  
+  .videosGrid {
+    gap: 32px;
+  }
+  
+  .podcastGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .conversationsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .topicsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .logosGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 60px 0 48px 0;
+  }
+  
+  .heroContent {
+    padding: 0 16px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .videoContent,
+  .conversationContent {
+    padding: 20px;
+  }
+  
+  .topicCard {
+    padding: 24px;
+  }
 } 
