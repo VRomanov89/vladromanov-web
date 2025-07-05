@@ -2,14 +2,11 @@ import { YouTubeVideo } from '../api/youtube-live/route';
 
 export async function getLatestYouTubeVideos(): Promise<YouTubeVideo[]> {
   try {
-    const apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/youtube-live`;
-    console.log('Fetching YouTube videos from:', apiUrl);
-    
+    // Always use a relative URL for Next.js API routes
+    const apiUrl = '/api/youtube-live';
     const response = await fetch(apiUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
     });
-
-    console.log('YouTube API response status:', response.status);
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -18,7 +15,6 @@ export async function getLatestYouTubeVideos(): Promise<YouTubeVideo[]> {
     }
 
     const data = await response.json();
-    console.log('YouTube videos received:', data.videos?.length || 0);
     return data.videos || [];
   } catch (error) {
     console.error('Error fetching YouTube videos:', error);
