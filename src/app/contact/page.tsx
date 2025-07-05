@@ -23,16 +23,21 @@ export default function ContactPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (res.ok) {
+      
+      const result = await res.json();
+      
+      if (res.ok && result.success) {
         setStatus('success');
         form.reset();
       } else {
         setStatus('error');
-        setError('❌ Something went wrong. Please try again later.');
+        // Display the specific error message from the API
+        setError(result.error || `Server error (${res.status}): ${res.statusText}`);
       }
-    } catch {
+    } catch (err) {
       setStatus('error');
-      setError('❌ Something went wrong. Please try again later.');
+      console.error('Contact form submission error:', err);
+      setError('Network error: Unable to connect to the server. Please check your internet connection and try again.');
     }
   }
 
