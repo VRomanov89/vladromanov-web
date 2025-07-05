@@ -14,15 +14,23 @@ export interface PodcastEpisode {
 
 export async function getLatestPodcastEpisodes(): Promise<PodcastEpisode[]> {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/transistor-episodes`, {
+    const apiUrl = `${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/transistor-episodes`;
+    console.log('Fetching podcast episodes from:', apiUrl);
+    
+    const response = await fetch(apiUrl, {
       next: { revalidate: 3600 }, // Cache for 1 hour
     });
 
+    console.log('Podcast API response status:', response.status);
+
     if (!response.ok) {
-      throw new Error(`Failed to fetch episodes: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('Podcast API error:', errorText);
+      throw new Error(`Failed to fetch episodes: ${response.status} - ${errorText}`);
     }
 
     const data = await response.json();
+    console.log('Podcast episodes received:', data.episodes?.length || 0);
     return data.episodes || [];
   } catch (error) {
     console.error('Error fetching podcast episodes:', error);
