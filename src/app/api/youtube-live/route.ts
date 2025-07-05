@@ -32,9 +32,12 @@ export async function GET(request: NextRequest) {
 
   try {
     // First, get the channel's uploads playlist
-    const channelResponse = await fetch(
-      `${BASE_URL}/channels?part=contentDetails&id=${CHANNEL_ID}&key=${YOUTUBE_API_KEY}`
-    );
+    const channelUrl = `${BASE_URL}/channels?part=contentDetails&id=${CHANNEL_ID}&key=${YOUTUBE_API_KEY}`;
+    console.log('Fetching channel from:', channelUrl);
+    
+    const channelResponse = await fetch(channelUrl);
+
+    console.log('Channel API Response status:', channelResponse.status);
 
     if (!channelResponse.ok) {
       const errorText = await channelResponse.text();
@@ -43,9 +46,14 @@ export async function GET(request: NextRequest) {
     }
 
     const channelData = await channelResponse.json();
-    console.log('Channel data received:', channelData);
+    console.log('Channel data received:', {
+      itemCount: channelData.items?.length || 0,
+      hasItems: !!channelData.items,
+      items: channelData.items
+    });
 
     if (!channelData.items || channelData.items.length === 0) {
+      console.error('No channel found with ID:', CHANNEL_ID);
       throw new Error('Channel not found');
     }
 
@@ -53,9 +61,12 @@ export async function GET(request: NextRequest) {
     console.log('Uploads playlist ID:', uploadsPlaylistId);
 
     // Get videos from the uploads playlist
-    const videosResponse = await fetch(
-      `${BASE_URL}/playlistItems?part=snippet&playlistId=${uploadsPlaylistId}&maxResults=12&key=${YOUTUBE_API_KEY}`
-    );
+    const videosUrl = `${BASE_URL}/playlistItems?part=snippet&playlistId=${uploadsPlaylistId}&maxResults=12&key=${YOUTUBE_API_KEY}`;
+    console.log('Fetching videos from:', videosUrl);
+    
+    const videosResponse = await fetch(videosUrl);
+
+    console.log('Videos API Response status:', videosResponse.status);
 
     if (!videosResponse.ok) {
       const errorText = await videosResponse.text();
@@ -65,11 +76,14 @@ export async function GET(request: NextRequest) {
 
     const videosData = await videosResponse.json();
     console.log('Videos data received:', {
-      videoCount: videosData.items?.length || 0
+      videoCount: videosData.items?.length || 0,
+      hasItems: !!videosData.items,
+      items: videosData.items?.slice(0, 2) // Log first 2 items for debugging
     });
 
     // Get additional video details (duration, view count)
     const videoIds = videosData.items.map((item: any) => item.snippet.resourceId.videoId).join(',');
+    console.log('Video IDs to fetch details for:', videoIds);
     
     const videoDetailsResponse = await fetch(
       `${BASE_URL}/videos?part=contentDetails,statistics&id=${videoIds}&key=${YOUTUBE_API_KEY}`
@@ -85,6 +99,7 @@ export async function GET(request: NextRequest) {
         };
         return acc;
       }, {});
+      console.log('Video details fetched for:', Object.keys(videoDetails).length, 'videos');
     }
 
     // Transform the data
@@ -96,7 +111,7 @@ export async function GET(request: NextRequest) {
         id: videoId,
         title: item.snippet.title,
         description: item.snippet.description,
-        publishedAt: item.snippet.publishedAt,
+        publishedAt: item.snippet.published_at,
         thumbnail: item.snippet.thumbnails.high?.url || item.snippet.thumbnails.medium?.url,
         channelTitle: item.snippet.channelTitle,
         duration: details.duration,
