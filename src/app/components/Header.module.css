@@ -140,4 +140,93 @@
     padding: 8px 0;
     line-height: 1.5;
   }
+}
+
+.hasSubmenu {
+  position: relative;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 140px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+  padding: 0;
+  z-index: 1000;
+  margin-top: 0px;
+  animation: fadeInSubmenu 0.18s cubic-bezier(.4,0,.2,1);
+}
+
+.submenu li {
+  list-style: none;
+}
+
+.submenu a {
+  display: block;
+  padding: 10px 22px 10px 22px;
+  color: #1a1a1a;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: initial !important;
+  text-decoration-thickness: initial !important;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background 0.18s, color 0.18s;
+  line-height: 1.2;
+  font-size: 1.08rem;
+  position: relative;
+  border-bottom: none;
+}
+
+.submenu a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  background: #0070f3;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.25s cubic-bezier(0.4,0,0.2,1);
+  transform-origin: left;
+}
+
+.submenu a:hover::after, .submenu a:focus::after {
+  transform: scaleX(1);
+}
+
+.submenu a:hover, .submenu a:focus {
+  background: #f0f6ff;
+  color: #0070f3;
+}
+
+@keyframes fadeInSubmenu {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Mobile submenu styles */
+.submenuMobile {
+  margin-top: 6px;
+  padding-left: 16px;
+}
+
+.submenuMobile a {
+  display: block;
+  padding: 8px 0;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.18s;
+}
+
+.submenuMobile a:hover, .submenuMobile a:focus {
+  background: #f0f6ff;
+  color: #0070f3;
 } 

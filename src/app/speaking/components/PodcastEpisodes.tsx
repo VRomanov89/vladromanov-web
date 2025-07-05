@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getLatestPodcastEpisodes } from "../../../lib/podcast";
-import PodcastCard from "../../../components/podcast/PodcastCard";
+import { getLatestPodcastEpisodes } from "../../lib/podcast";
+import PodcastCard from "../../components/podcast/PodcastCard";
 import styles from "../Speaking.module.css";
 
 export default async function PodcastEpisodes() {

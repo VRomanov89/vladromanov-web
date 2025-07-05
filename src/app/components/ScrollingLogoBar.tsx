@@ -59,35 +59,38 @@ export default function ScrollingLogoBar() {
   }, []);
 
   // Render the first group with a ref to measure width
-  const groups = [
-    <div className={styles.marqueeGroup} ref={groupRef} key="group-0">
-      {logoData.map((logo, i) => (
-        <span className={styles.marqueeLogo} key={logo.name + i}>
-          <Image
-            src={logo.file}
-            alt={logo.name + " logo"}
-            width={112}
-            height={72}
-            style={{ objectFit: "contain", maxHeight: 72, display: 'block' }}
-          />
-        </span>
-      ))}
-    </div>
-  ];
-  for (let i = 1; i < repeatCount; i++) {
+  const totalLogos = logoData.length * repeatCount;
+  let logoIndex = 0;
+  const groups = [];
+  for (let i = 0; i < repeatCount; i++) {
     groups.push(
-      <div className={styles.marqueeGroup} aria-hidden="true" key={`group-${i}`}>
-        {logoData.map((logo, j) => (
-          <span className={styles.marqueeLogo} key={logo.name + i + '-' + j}>
-            <Image
-              src={logo.file}
-              alt={logo.name + " logo"}
-              width={112}
-              height={72}
-              style={{ objectFit: "contain", maxHeight: 72, display: 'block' }}
-            />
-          </span>
-        ))}
+      <div className={styles.marqueeGroup} ref={i === 0 ? groupRef : undefined} key={`group-${i}`}>
+        {logoData.map((logo, j) => {
+          logoIndex++;
+          const isLast = logoIndex === totalLogos;
+          const isLastInGroup = j === logoData.length - 1;
+          return (
+            <span
+              className={
+                isLast
+                  ? styles.marqueeLogo
+                  : styles.marqueeLogo + ' ' + styles.marqueeLogoGlobalSpacing
+              }
+              key={logo.name + i + '-' + j}
+            >
+              <Image
+                src={logo.file}
+                alt={logo.name + " logo"}
+                width={112}
+                height={72}
+                style={{ objectFit: "contain", maxHeight: 72, display: 'block' }}
+              />
+            </span>
+          );
+        })}
+        {i === 0 && (
+          <span className={styles.marqueeSpacer} aria-hidden="true" />
+        )}
       </div>
     );
   }

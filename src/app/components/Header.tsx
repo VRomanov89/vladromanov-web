@@ -9,9 +9,9 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/engagements", label: "Engagements" },
-  { href: "/speaking", label: "Speaking" },
-  { href: "/podcast", label: "Podcast" },
-  { href: "/resources", label: "Resources" },
+  { href: "/speaking", label: "Speaking", submenu: [
+    { href: "/podcast", label: "Podcast" }
+  ] },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -20,6 +20,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState<string | null>(null);
 
   useEffect(() => {
     setIsClient(true);
@@ -38,7 +39,12 @@ export default function Header() {
       <nav className={styles.nav}>
         <ul className={styles.navList}>
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li
+              key={link.href}
+              className={link.submenu ? styles.hasSubmenu : undefined}
+              onMouseEnter={() => link.submenu && setSubmenuOpen(link.label)}
+              onMouseLeave={() => link.submenu && setSubmenuOpen(null)}
+            >
               <Link
                 href={link.href}
                 className={
@@ -50,6 +56,25 @@ export default function Header() {
               >
                 {link.label}
               </Link>
+              {link.submenu && submenuOpen === link.label && (
+                <ul className={styles.submenu}>
+                  {link.submenu.map((sublink) => (
+                    <li key={sublink.href}>
+                      <Link
+                        href={sublink.href}
+                        className={
+                          pathname === sublink.href
+                            ? `${styles.navLink} ${styles.active}`
+                            : styles.navLink
+                        }
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {sublink.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
         </ul>
@@ -79,6 +104,25 @@ export default function Header() {
                 >
                   {link.label}
                 </Link>
+                {link.submenu && (
+                  <ul className={styles.submenuMobile}>
+                    {link.submenu.map((sublink) => (
+                      <li key={sublink.href}>
+                        <Link
+                          href={sublink.href}
+                          className={
+                            pathname === sublink.href
+                              ? `${styles.navLink} ${styles.active}`
+                              : styles.navLink
+                          }
+                          onClick={() => setMenuOpen(false)}
+                        >
+                          {sublink.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>

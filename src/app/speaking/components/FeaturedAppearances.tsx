@@ -8,10 +8,10 @@ const featuredVideos = [
     quote: "\"We're not short on technology. We're short on clarity, ownership, and the ability to drive real change inside the plant.\""
   },
   {
-    id: "dQw4w9WgXcQ", // Placeholder - replace with real video ID
-    title: "Panel Discussion – Digital Transformation in Manufacturing",
-    context: "Exploring real-world strategies for successful digital adoption, from culture change to technology implementation.",
-    quote: "\"Digital transformation starts with people, not just platforms.\""
+    id: "5Y7JDNB2Igs", // Sepasoft 2024 Presentation & Interview
+    title: "Presentation & Interview – Sepasoft: Building Future-Ready Manufacturing Systems",
+    context: "In this on-stage presentation and interview hosted by Sepasoft, I shared practical insights from years of consulting across Fortune 500 manufacturing environments. We discussed how to design resilient architectures, drive data adoption on the plant floor, and navigate the real-world gaps between SCADA, MES, and ERP systems. The conversation covered cultural friction, technical debt, and what makes a successful digital transformation effort stick.",
+    quote: "\"You can't implement MES from a boardroom. You need to understand what's really happening on the plant floor.\""
   }
 ];
 
@@ -20,10 +20,16 @@ export default function FeaturedAppearances() {
     <section className={styles.featuredSection}>
       <div className={styles.container}>
         <h2 className={styles.sectionTitle}>Notable Speaking Highlights</h2>
-        <div className={styles.videosGrid}>
+        <div
+          className={
+            featuredVideos.length === 1
+              ? styles.singleHighlightWrapper
+              : styles.videosGrid
+          }
+        >
           {featuredVideos.map((video, index) => (
             <div key={index} className={styles.videoCard}>
-              <div className={styles.videoWrapper}>
+              <div className={styles.responsiveVideoWrapper}>
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}`}
                   title={video.title}
@@ -31,6 +37,7 @@ export default function FeaturedAppearances() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className={styles.video}
+                  style={{ width: '100%', height: '100%', display: 'block' }}
                 />
               </div>
               <div className={styles.videoContent}>

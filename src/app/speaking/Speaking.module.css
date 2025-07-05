@@ -328,48 +328,61 @@
   gap: 48px;
 }
 
+.singleHighlightWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.responsiveVideoWrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #f8fafc;
+  border-radius: 18px 18px 0 0;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .videoCard {
   background: #f8fafc;
   border-radius: 18px;
-  overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 0 32px 0;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
 .videoCard:hover {
-  transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-}
-
-.videoWrapper {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-}
-
-.video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+  transform: translateY(-4px) scale(1.01);
 }
 
 .videoContent {
-  padding: 32px;
+  padding: 32px 32px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .videoTitle {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 12px;
 }
 
 .videoContext {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: #555;
   margin-bottom: 16px;
   line-height: 1.6;
@@ -378,10 +391,13 @@
 .videoQuote {
   font-style: italic;
   color: #0070f3;
-  font-size: 1.1rem;
+  font-size: 1.08rem;
   border-left: 4px solid #0070f3;
   padding-left: 16px;
   margin: 0;
+  background: #f0f6ff;
+  border-radius: 8px;
+  margin-top: 16px;
 }
 
 /* --- PODCAST EPISODES --- */
@@ -725,5 +741,13 @@
   
   .topicCard {
     padding: 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  .responsiveVideoWrapper,
+  .videoCard {
+    max-width: 100%;
+    border-radius: 0;
   }
 } 
