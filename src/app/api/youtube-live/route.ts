@@ -111,7 +111,7 @@ export async function GET(request: NextRequest) {
         id: videoId,
         title: item.snippet.title,
         description: item.snippet.description,
-        publishedAt: item.snippet.published_at,
+        publishedAt: item.snippet.publishedAt,
         thumbnail: item.snippet.thumbnails.high?.url || item.snippet.thumbnails.medium?.url,
         channelTitle: item.snippet.channelTitle,
         duration: details.duration,

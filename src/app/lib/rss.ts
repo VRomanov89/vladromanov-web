@@ -25,7 +25,7 @@ const parser = new Parser({
   },
 });
 
-export async function getLatestPodcastEpisodes(): Promise<PodcastEpisode[]> {
+export async function getLatestPodcastEpisodes(limit: number = 6): Promise<PodcastEpisode[]> {
   try {
     console.log('Fetching RSS feed from Manufacturing Hub...');
     
@@ -41,8 +41,8 @@ export async function getLatestPodcastEpisodes(): Promise<PodcastEpisode[]> {
       return [];
     }
 
-    // Take the latest 6 episodes
-    const latestEpisodes = feed.items.slice(0, 6);
+    // Take the latest N episodes
+    const latestEpisodes = feed.items.slice(0, limit);
 
     const episodes: PodcastEpisode[] = latestEpisodes.map((item, index) => {
       // Clean description - remove HTML tags and limit length

@@ -3,7 +3,7 @@ import PodcastCard from "../components/podcast/PodcastCard";
 import styles from "./Podcast.module.css";
 
 export default async function PodcastPage() {
-  const episodes = await getLatestPodcastEpisodes();
+  const episodes = await getLatestPodcastEpisodes(64);
 
   return (
     <main>
