@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { PodcastEpisode, formatDuration, formatDate } from '../../lib/podcast';
+import { PodcastEpisode, formatDuration, formatDate } from '../../lib/rss';
 import styles from './PodcastCard.module.css';
 
 interface PodcastCardProps {

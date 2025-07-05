@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getLatestPodcastEpisodes } from "../../lib/podcast";
+import { getLatestPodcastEpisodes, formatDate, formatDuration } from "../../lib/rss";
 import PodcastCard from "../../components/podcast/PodcastCard";
 import styles from "../Speaking.module.css";
 
@@ -11,7 +11,7 @@ export default async function PodcastEpisodes() {
   return (
     <section className={styles.podcastSection}>
       <div className={styles.container}>
-        <h2 className={styles.sectionTitle}>Latest Podcast Episodes</h2>
+        <h2 className={styles.sectionTitle}>🎧 Latest Episodes from Manufacturing Hub</h2>
         
         {episodes.length > 0 ? (
           <>
@@ -21,14 +21,14 @@ export default async function PodcastEpisodes() {
               ))}
             </div>
             <div className={styles.podcastCta}>
-              <Link href="/podcast" className={styles.seeAllButton}>
+              <Link href="https://www.manufacturinghub.live" className={styles.seeAllButton} target="_blank" rel="noopener noreferrer">
                 See All Episodes
               </Link>
             </div>
           </>
         ) : (
           <div className={styles.noEpisodes}>
-            <p>No episodes found. Debug: {JSON.stringify(episodes)}</p>
+            <p>Loading latest episodes...</p>
           </div>
         )}
       </div>
