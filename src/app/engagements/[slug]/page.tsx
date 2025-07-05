@@ -42,11 +42,12 @@ async function getEngagement(slug: string): Promise<Engagement | null> {
 }
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export default async function EngagementPage({ params }: Props) {
-  const engagement = await getEngagement(params.slug);
+  const { slug } = await params;
+  const engagement = await getEngagement(slug);
   if (!engagement) return notFound();
 
   return (
@@ -119,8 +120,9 @@ export default async function EngagementPage({ params }: Props) {
   );
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const engagement = await getEngagement(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const engagement = await getEngagement(slug);
   if (!engagement) return { title: "Engagement Not Found – Vlad Romanov" };
   return {
     title: `${engagement.title} – Case Study | Vlad Romanov`,
