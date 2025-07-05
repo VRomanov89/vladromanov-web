@@ -2,10 +2,10 @@ import styles from "../Speaking.module.css";
 
 const featuredVideos = [
   {
-    id: "dQw4w9WgXcQ", // Placeholder - replace with real video ID
-    title: "Keynote – Automate 2025: The Future of IT/OT Integration",
-    context: "A comprehensive look at how IT and OT convergence is reshaping manufacturing operations and what leaders need to know to stay ahead.",
-    quote: "\"The integration of IT and OT isn't just about technology—it's about creating a unified vision for operational excellence.\""
+    id: "x1IsXGHg2p4", // SPS 2023 Panel
+    title: "Panel Discussion – SPS 2023: Bridging the IT/OT Divide in Modern Manufacturing",
+    context: "At SPS 2023, I joined Reiner Brehm (CEO, Siemens Industrial Networks), Efrossini Tsouchnika (SVP, Siemens Digital Industries), and Gerhard Kreß (Director, SAP) for a strategic panel discussion on how manufacturers can align IT and OT to drive transformation. We tackled cultural divides, architectural decisions, and the realities of change inside complex industrial organizations.",
+    quote: "\"We're not short on technology. We're short on clarity, ownership, and the ability to drive real change inside the plant.\""
   },
   {
     id: "dQw4w9WgXcQ", // Placeholder - replace with real video ID

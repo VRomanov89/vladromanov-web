@@ -1,0 +1,103 @@
+/* --- HERO SECTION --- */
+.heroSection {
+  background: linear-gradient(135deg, #f8fafc 0%, #e8f0fe 100%);
+  padding: 80px 0 64px 0;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 0;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- CONTAINER --- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- SECTION TITLES --- */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+/* --- EPISODES SECTION --- */
+.episodesSection {
+  padding: 80px 0;
+  background: #fff;
+}
+
+.episodesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.noEpisodes {
+  text-align: center;
+  padding: 60px 0;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  
+  .episodesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 60px 0 48px 0;
+  }
+  
+  .heroContent {
+    padding: 0 16px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .episodesSection {
+    padding: 60px 0;
+  }
+} 

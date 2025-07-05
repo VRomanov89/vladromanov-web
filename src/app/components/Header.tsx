@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/engagements", label: "Engagements" },
   { href: "/speaking", label: "Speaking" },
+  { href: "/podcast", label: "Podcast" },
   { href: "/resources", label: "Resources" },
   { href: "/contact", label: "Contact" },
 ];
