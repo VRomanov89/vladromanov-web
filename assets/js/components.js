@@ -1,5 +1,5 @@
 /* ============================================================
-   SHARED COMPONENTS — Header & Footer
+   SHARED COMPONENTS - Header & Footer
    Injects shared HTML via JS template literals.
    Works with file:// and http:// alike (no fetch needed).
    ============================================================ */
@@ -22,7 +22,7 @@ const headerHTML = `
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <div class="container">
     <div class="nav__inner">
-      <a href="/" class="nav__logo" aria-label="Vladimir Romanov – Home">
+      <a href="/" class="nav__logo" aria-label="Vladimir Romanov">
         <div class="nav__logo-mark" aria-hidden="true">VR</div>
         <span>Vladimir Romanov</span>
       </a>
@@ -66,7 +66,7 @@ const footerHTML = `
   <div class="container">
     <div class="footer__grid">
       <div>
-        <a href="/" class="footer__brand-logo" aria-label="Vladimir Romanov – Home">
+        <a href="/" class="footer__brand-logo" aria-label="Vladimir Romanov">
           <div class="footer__brand-mark" aria-hidden="true">VR</div>
           <span>Vladimir Romanov</span>
         </a>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Manufacturer's Guide to MES Implementation — Vladimir Romanov</title>
-  <meta name="description" content="After deploying MES systems at multiple Fortune 500 plants, here's what no one tells you about making it actually work — from vendor selection to go-live." />
+  <title>The Manufacturer's Guide to MES Implementation | Vladimir Romanov</title>
+  <meta name="description" content="After deploying MES systems at multiple Fortune 500 plants, here's what no one tells you about making it actually work, from vendor selection to go-live." />
   <link rel="canonical" href="https://vladimirromanov.com/blog/posts/manufacturers-guide-to-mes.html" />
 
   <meta property="og:type"        content="article" />
@@ -72,9 +72,9 @@
         <!-- Content -->
         <article class="post-content" aria-label="Article content">
 
-          <p>I've been involved in MES implementations at several Fortune 500 manufacturing plants. Some went smoothly. Most didn't — at least not at first. After years of seeing what separates successful deployments from expensive disasters, I want to share the things no consultant or software vendor will tell you upfront.</p>
+          <p>I've been involved in MES implementations at several Fortune 500 manufacturing plants. Some went smoothly. Most did not, at least not at first. After years of seeing what separates successful deployments from expensive disasters, I want to share the things no consultant or software vendor will tell you upfront.</p>
 
-          <p>This isn't a product review or a feature comparison. This is a field guide from someone who has lived through the late nights, the frustrated operators, the missed go-live dates, and — eventually — the systems that actually transformed how plants run.</p>
+          <p>This isn't a product review or a feature comparison. This is a field guide from someone who has lived through the late nights, the frustrated operators, the missed go-live dates, and eventually the systems that actually transformed how plants run.</p>
 
           <blockquote>
             <p>An MES is not a technology project. It's a business transformation that happens to involve technology. Get that backwards, and you're already in trouble.</p>
@@ -84,7 +84,7 @@
 
           <p>A Manufacturing Execution System sits between your ERP (enterprise resource planning) and your plant-floor automation. Its job is to manage and monitor the transformation of raw materials into finished goods in real time. It tracks work orders, material consumption, labor, machine states, quality data, and genealogy.</p>
 
-          <p>What it doesn't do is fix broken processes. If your scheduling is chaotic, your MES will automate the chaos. If your quality processes are inconsistent, your MES will record the inconsistency with much higher precision. The technology amplifies what's already there — for better or worse.</p>
+          <p>What it doesn't do is fix broken processes. If your scheduling is chaotic, your MES will automate the chaos. If your quality processes are inconsistent, your MES will record the inconsistency with much higher precision. The technology amplifies what is already there, for better or worse.</p>
 
           <h2 id="before-you-buy">Before You Select a Vendor</h2>
 
@@ -93,17 +93,17 @@
           <p>Before any RFP goes out, you need clear answers to:</p>
           <ul>
             <li>What specific business problems are we solving? (downtime visibility, quality traceability, OEE tracking?)</li>
-            <li>Which processes will be in scope for the first phase — and which won't?</li>
+            <li>Which processes will be in scope for the first phase, and which will not?</li>
             <li>What does our current data infrastructure look like? (historian, ERP, network topology)</li>
             <li>Who will own the system after go-live, and do they have the skills today?</li>
-            <li>What does success look like in 12 months — and how will we measure it?</li>
+            <li>What does success look like in 12 months, and how will we measure it?</li>
           </ul>
 
           <p>Without answers to these questions, you're evaluating vendors based on how good their demo is, not how well they fit your situation.</p>
 
           <h2 id="vendor-selection">Selecting the Right Platform</h2>
 
-          <p>MES platforms vary enormously — from purpose-built industry solutions to configurable platforms like Ignition with MES modules. There's no universally "best" choice. The right one depends on your industry, your IT/OT maturity, your integration requirements, and your internal capability to manage it.</p>
+          <p>MES platforms vary enormously, from purpose-built industry solutions to configurable platforms like Ignition with MES modules. There's no universally "best" choice. The right one depends on your industry, your IT/OT maturity, your integration requirements, and your internal capability to manage it.</p>
 
           <p>A few things I always look for:</p>
           <ul>
@@ -119,25 +119,25 @@
 
           <p>Your MES is only as good as the data feeding it. Before you start, audit your data sources. You'll typically find inconsistent naming conventions across lines, production counts that don't match manual records, and material codes that don't align between systems.</p>
 
-          <p>Plan at least 4–6 weeks for data cleansing before any integration work starts. This is not glamorous work, but it's what separates a functional MES from one that operators don't trust and eventually stop using.</p>
+          <p>Plan at least 4 to 6 weeks for data cleansing before any integration work starts. This is not glamorous work, but it's what separates a functional MES from one that operators don't trust and eventually stop using.</p>
 
           <h3 id="change-management">Change Management Is the Real Project</h3>
 
           <p>Technology implementation is the easy part. The hard part is getting your operators, supervisors, and plant managers to change how they work every day.</p>
 
-          <p>Operators who've managed production with a whiteboard for 15 years don't automatically trust a screen. Supervisors who run their own spreadsheets don't immediately see why they should switch. You need early wins, visible leadership support, and genuine training — not a 30-minute click-through at go-live.</p>
+          <p>Operators who've managed production with a whiteboard for 15 years don't automatically trust a screen. Supervisors who run their own spreadsheets don't immediately see why they should switch. You need early wins, visible leadership support, and genuine training, not a 30-minute click-through at go-live.</p>
 
           <p>The plants I've seen fail at MES adoption all had one thing in common: they treated training as a box to check, not as an ongoing change program.</p>
 
           <h3 id="it-ot">The IT/OT Interface Is a Minefield</h3>
 
-          <p>MES lives at the intersection of IT and OT — and that intersection is full of friction. IT wants standard security protocols, centralized management, and documented software. OT wants systems that work on 24/7 production equipment without unexpected reboots and patches.</p>
+          <p>MES lives at the intersection of IT and OT, and that intersection is full of friction. IT wants standard security protocols, centralized management, and documented software. OT wants systems that work on 24/7 production equipment without unexpected reboots and patches.</p>
 
           <p>Establish a joint IT/OT steering committee early. Define who owns what: who approves network changes, who manages the MES servers, who handles patches. Without clear ownership, every decision becomes a negotiation and every problem becomes a blame game.</p>
 
           <h2 id="go-live">Planning for Go-Live</h2>
 
-          <p>Go-live is not the finish line — it's the beginning of a new phase. Plan for these realities:</p>
+          <p>Go-live is not the finish line; it is the beginning of a new phase. Plan for these realities:</p>
 
           <ul>
             <li><strong>Run parallel systems for at least two weeks:</strong> Keep the old process (paper, whiteboard, spreadsheet) running alongside the new MES. This builds operator confidence and gives you a fallback if something breaks.</li>
@@ -149,13 +149,13 @@
 
           <p>Connect your MES metrics to business outcomes, not system metrics. "Number of transactions processed" is a system metric. "OEE improved from 68% to 79%" is a business outcome. "First-pass yield increased by 3.2 percentage points" is a business outcome.</p>
 
-          <p>Set baseline measurements before go-live and review them 90 days and 180 days after. If you can't show business impact at those milestones, something went wrong — either in the configuration, the adoption, or the original scope definition.</p>
+          <p>Set baseline measurements before go-live and review them 90 days and 180 days after. If you can't show business impact at those milestones, something went wrong, whether in the configuration, the adoption, or the original scope definition.</p>
 
           <h2 id="conclusion">The Bottom Line</h2>
 
           <p>A well-implemented MES is genuinely transformative. I've seen plants go from running blind on production data to making real-time decisions that drive significant cost and quality improvements. The technology is capable.</p>
 
-          <p>But the technology doesn't implement itself. The gap between a successful MES deployment and a failed one isn't the product — it's the process: how well you defined the problem, how thoroughly you cleaned your data, how seriously you treated change management, and how clearly you defined what success looks like.</p>
+          <p>But the technology doesn't implement itself. The gap between a successful MES deployment and a failed one is not the product; it is the process: how well you defined the problem, how thoroughly you cleaned your data, how seriously you treated change management, and how clearly you defined what success looks like.</p>
 
           <p>Get those fundamentals right, and the technology almost takes care of itself.</p>
 

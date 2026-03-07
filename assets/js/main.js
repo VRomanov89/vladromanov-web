@@ -1,5 +1,5 @@
 /* ============================================================
-   MAIN.JS — Animations, interactions, utilities
+   MAIN.JS - Animations, interactions, utilities
    ============================================================ */
 
 /* --- Intersection Observer: fade-up on scroll --- */
