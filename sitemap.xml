@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://vladimirromanov.com/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/experience.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/projects.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/contact.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/posts/manufacturers-guide-to-mes.html</loc>
+    <lastmod>2025-11-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/posts/scada-architecture-best-practices.html</loc>
+    <lastmod>2025-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/posts/it-ot-convergence-guide.html</loc>
+    <lastmod>2025-09-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/posts/digital-transformation-roadmap.html</loc>
+    <lastmod>2025-08-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/posts/plc-programming-best-practices.html</loc>
+    <lastmod>2025-07-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://vladimirromanov.com/blog/posts/obsolescence-mitigation-strategy.html</loc>
+    <lastmod>2025-06-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>

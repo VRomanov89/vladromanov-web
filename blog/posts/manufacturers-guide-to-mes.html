@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Manufacturer's Guide to MES Implementation — Vladimir Romanov</title>
+  <meta name="description" content="After deploying MES systems at multiple Fortune 500 plants, here's what no one tells you about making it actually work — from vendor selection to go-live." />
+  <link rel="canonical" href="https://vladimirromanov.com/blog/posts/manufacturers-guide-to-mes.html" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://vladimirromanov.com/blog/posts/manufacturers-guide-to-mes.html" />
+  <meta property="og:title"       content="The Manufacturer's Guide to MES Implementation: Lessons From the Field" />
+  <meta property="og:description" content="After deploying MES systems at multiple Fortune 500 plants, here's what no one tells you about making it actually work." />
+
+  <meta name="author"           content="Vladimir Romanov" />
+  <meta name="article:published_time" content="2025-11-10" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Manufacturer's Guide to MES Implementation: Lessons From the Field",
+    "description": "After deploying MES systems at multiple Fortune 500 plants, here's what no one tells you about making it actually work.",
+    "author": { "@type": "Person", "name": "Vladimir Romanov", "url": "https://vladimirromanov.com" },
+    "publisher": { "@type": "Person", "name": "Vladimir Romanov" },
+    "datePublished": "2025-11-10",
+    "url": "https://vladimirromanov.com/blog/posts/manufacturers-guide-to-mes.html"
+  }
+  </script>
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <!-- POST HERO -->
+    <div class="post-hero">
+      <div class="container container--narrow">
+        <nav class="post-hero__breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">›</span>
+          <span>MES Implementation</span>
+        </nav>
+        <div class="tag-group">
+          <span class="tag tag--primary">MES</span>
+          <span class="tag">Manufacturing</span>
+          <span class="tag">Digital Transformation</span>
+        </div>
+        <h1 class="post-hero__title">The Manufacturer's Guide to MES Implementation: Lessons From the Field</h1>
+        <div class="post-hero__meta">
+          <span>By <a href="/about.html" style="color:var(--color-accent);font-weight:600">Vladimir Romanov</a></span>
+          <span>·</span>
+          <time datetime="2025-11-10">November 10, 2025</time>
+          <span>·</span>
+          <span>8 min read</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- POST LAYOUT -->
+    <div class="container" style="padding-top:0">
+      <div class="post-layout">
+
+        <!-- Content -->
+        <article class="post-content" aria-label="Article content">
+
+          <p>I've been involved in MES implementations at several Fortune 500 manufacturing plants. Some went smoothly. Most didn't — at least not at first. After years of seeing what separates successful deployments from expensive disasters, I want to share the things no consultant or software vendor will tell you upfront.</p>
+
+          <p>This isn't a product review or a feature comparison. This is a field guide from someone who has lived through the late nights, the frustrated operators, the missed go-live dates, and — eventually — the systems that actually transformed how plants run.</p>
+
+          <blockquote>
+            <p>An MES is not a technology project. It's a business transformation that happens to involve technology. Get that backwards, and you're already in trouble.</p>
+          </blockquote>
+
+          <h2 id="what-is-mes">What MES Actually Does (and Doesn't Do)</h2>
+
+          <p>A Manufacturing Execution System sits between your ERP (enterprise resource planning) and your plant-floor automation. Its job is to manage and monitor the transformation of raw materials into finished goods in real time. It tracks work orders, material consumption, labor, machine states, quality data, and genealogy.</p>
+
+          <p>What it doesn't do is fix broken processes. If your scheduling is chaotic, your MES will automate the chaos. If your quality processes are inconsistent, your MES will record the inconsistency with much higher precision. The technology amplifies what's already there — for better or worse.</p>
+
+          <h2 id="before-you-buy">Before You Select a Vendor</h2>
+
+          <p>The first mistake most companies make is starting with vendor demos. You call three or four vendors, watch polished presentations, and then try to pick the "best" product. But you haven't defined what "best" means for your specific situation.</p>
+
+          <p>Before any RFP goes out, you need clear answers to:</p>
+          <ul>
+            <li>What specific business problems are we solving? (downtime visibility, quality traceability, OEE tracking?)</li>
+            <li>Which processes will be in scope for the first phase — and which won't?</li>
+            <li>What does our current data infrastructure look like? (historian, ERP, network topology)</li>
+            <li>Who will own the system after go-live, and do they have the skills today?</li>
+            <li>What does success look like in 12 months — and how will we measure it?</li>
+          </ul>
+
+          <p>Without answers to these questions, you're evaluating vendors based on how good their demo is, not how well they fit your situation.</p>
+
+          <h2 id="vendor-selection">Selecting the Right Platform</h2>
+
+          <p>MES platforms vary enormously — from purpose-built industry solutions to configurable platforms like Ignition with MES modules. There's no universally "best" choice. The right one depends on your industry, your IT/OT maturity, your integration requirements, and your internal capability to manage it.</p>
+
+          <p>A few things I always look for:</p>
+          <ul>
+            <li><strong>Integration story:</strong> How does it connect to your existing historian, ERP (SAP, Oracle, or otherwise), and automation layer? Ask for reference customers with your exact stack.</li>
+            <li><strong>Configurability vs. customization:</strong> Configurable systems (rules-based, no-code changes) are far easier to maintain than customized ones. Every customization becomes technical debt.</li>
+            <li><strong>Vendor support model:</strong> What does Level 1/2/3 support look like? What's the SLA for a production-down event?</li>
+            <li><strong>Long-term roadmap:</strong> Is the vendor investing in this product? Are they cloud-native or still on-premise only?</li>
+          </ul>
+
+          <h2 id="implementation-pitfalls">The Implementation Pitfalls Nobody Mentions</h2>
+
+          <h3 id="data-quality">Data Quality Is Always Worse Than You Think</h3>
+
+          <p>Your MES is only as good as the data feeding it. Before you start, audit your data sources. You'll typically find inconsistent naming conventions across lines, production counts that don't match manual records, and material codes that don't align between systems.</p>
+
+          <p>Plan at least 4–6 weeks for data cleansing before any integration work starts. This is not glamorous work, but it's what separates a functional MES from one that operators don't trust and eventually stop using.</p>
+
+          <h3 id="change-management">Change Management Is the Real Project</h3>
+
+          <p>Technology implementation is the easy part. The hard part is getting your operators, supervisors, and plant managers to change how they work every day.</p>
+
+          <p>Operators who've managed production with a whiteboard for 15 years don't automatically trust a screen. Supervisors who run their own spreadsheets don't immediately see why they should switch. You need early wins, visible leadership support, and genuine training — not a 30-minute click-through at go-live.</p>
+
+          <p>The plants I've seen fail at MES adoption all had one thing in common: they treated training as a box to check, not as an ongoing change program.</p>
+
+          <h3 id="it-ot">The IT/OT Interface Is a Minefield</h3>
+
+          <p>MES lives at the intersection of IT and OT — and that intersection is full of friction. IT wants standard security protocols, centralized management, and documented software. OT wants systems that work on 24/7 production equipment without unexpected reboots and patches.</p>
+
+          <p>Establish a joint IT/OT steering committee early. Define who owns what: who approves network changes, who manages the MES servers, who handles patches. Without clear ownership, every decision becomes a negotiation and every problem becomes a blame game.</p>
+
+          <h2 id="go-live">Planning for Go-Live</h2>
+
+          <p>Go-live is not the finish line — it's the beginning of a new phase. Plan for these realities:</p>
+
+          <ul>
+            <li><strong>Run parallel systems for at least two weeks:</strong> Keep the old process (paper, whiteboard, spreadsheet) running alongside the new MES. This builds operator confidence and gives you a fallback if something breaks.</li>
+            <li><strong>Hypercare support on the floor:</strong> Have your implementation team physically present on the floor for the first week. Problems surface immediately in production; remote support is too slow.</li>
+            <li><strong>Define a rollback plan:</strong> If the system goes down during go-live, what's the contingency? Who authorizes a rollback? How long can you run without the MES?</li>
+          </ul>
+
+          <h2 id="measuring-success">Measuring What Matters</h2>
+
+          <p>Connect your MES metrics to business outcomes, not system metrics. "Number of transactions processed" is a system metric. "OEE improved from 68% to 79%" is a business outcome. "First-pass yield increased by 3.2 percentage points" is a business outcome.</p>
+
+          <p>Set baseline measurements before go-live and review them 90 days and 180 days after. If you can't show business impact at those milestones, something went wrong — either in the configuration, the adoption, or the original scope definition.</p>
+
+          <h2 id="conclusion">The Bottom Line</h2>
+
+          <p>A well-implemented MES is genuinely transformative. I've seen plants go from running blind on production data to making real-time decisions that drive significant cost and quality improvements. The technology is capable.</p>
+
+          <p>But the technology doesn't implement itself. The gap between a successful MES deployment and a failed one isn't the product — it's the process: how well you defined the problem, how thoroughly you cleaned your data, how seriously you treated change management, and how clearly you defined what success looks like.</p>
+
+          <p>Get those fundamentals right, and the technology almost takes care of itself.</p>
+
+          <!-- Author bio -->
+          <div class="card mt-12" style="display:flex;gap:1.5rem;align-items:flex-start;padding:1.5rem">
+            <div style="width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--color-primary),var(--color-accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1rem;flex-shrink:0" aria-hidden="true">VR</div>
+            <div>
+              <p style="font-size:0.875rem;font-weight:700;color:var(--color-primary);margin-bottom:4px">Vladimir Romanov</p>
+              <p style="font-size:0.8125rem;color:var(--color-accent);margin-bottom:0.5rem">Manufacturing Modernization &amp; Digital Transformation Consultant</p>
+              <p style="font-size:0.875rem;color:var(--color-body-muted);line-height:1.65;margin:0;max-width:100%">Founder of Joltek and SolisPLC. 10+ years delivering manufacturing modernization programs at P&amp;G, Kraft Heinz, and Post Holdings.</p>
+              <div class="flex gap-3 mt-3">
+                <a href="https://www.linkedin.com/in/vladromanov" class="social-link" target="_blank" rel="noopener noreferrer" style="font-size:0.8rem">LinkedIn</a>
+                <a href="/contact.html" class="social-link" style="font-size:0.8rem">Contact</a>
+              </div>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- Sidebar: TOC -->
+        <aside class="post-sidebar" aria-label="Table of contents">
+          <nav class="toc" aria-label="On this page">
+            <p class="toc__title">On This Page</p>
+            <ul class="toc__list" role="list">
+              <li><a href="#what-is-mes"         class="toc__link">What MES Actually Does</a></li>
+              <li><a href="#before-you-buy"       class="toc__link">Before You Select a Vendor</a></li>
+              <li><a href="#vendor-selection"     class="toc__link">Selecting the Right Platform</a></li>
+              <li><a href="#implementation-pitfalls" class="toc__link">Implementation Pitfalls</a></li>
+              <li><a href="#data-quality"         class="toc__link" style="padding-left:1.25rem">→ Data Quality</a></li>
+              <li><a href="#change-management"    class="toc__link" style="padding-left:1.25rem">→ Change Management</a></li>
+              <li><a href="#it-ot"                class="toc__link" style="padding-left:1.25rem">→ IT/OT Interface</a></li>
+              <li><a href="#go-live"              class="toc__link">Planning for Go-Live</a></li>
+              <li><a href="#measuring-success"    class="toc__link">Measuring What Matters</a></li>
+              <li><a href="#conclusion"           class="toc__link">The Bottom Line</a></li>
+            </ul>
+          </nav>
+
+          <div class="card mt-5" style="padding:1.25rem">
+            <p style="font-size:0.8125rem;font-weight:700;color:var(--color-primary);margin-bottom:0.75rem">Need MES Guidance?</p>
+            <p style="font-size:0.8125rem;color:var(--color-body-muted);line-height:1.6;margin-bottom:0.875rem">I help manufacturers plan, select, and implement MES solutions that actually deliver ROI.</p>
+            <a href="/contact.html" class="btn btn--primary btn--sm" style="width:100%;justify-content:center">Get in Touch</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- Related posts -->
+    <section class="section section--light" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 class="mb-8" id="related-heading">Related Posts</h2>
+        <div class="blog-grid">
+          <a href="/blog/posts/scada-architecture-best-practices.html" class="post-card fade-up">
+            <div class="post-card__thumb" style="background:linear-gradient(135deg,#2d0077,#524967)">
+              <span class="post-card__thumb-label"><span class="tag tag--primary">SCADA</span></span>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><time datetime="2025-10-22">Oct 22, 2025</time><span class="post-card__meta-dot"></span><span>6 min read</span></div>
+              <h3 class="post-card__title">SCADA Architecture Best Practices for Modern Manufacturing</h3>
+              <span class="post-card__readmore">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+          <a href="/blog/posts/it-ot-convergence-guide.html" class="post-card fade-up" style="transition-delay:0.1s">
+            <div class="post-card__thumb" style="background:linear-gradient(135deg,#1a0052,#524967)">
+              <span class="post-card__thumb-label"><span class="tag tag--primary">IT/OT</span></span>
+            </div>
+            <div class="post-card__body">
+              <div class="post-card__meta"><time datetime="2025-09-15">Sep 15, 2025</time><span class="post-card__meta-dot"></span><span>7 min read</span></div>
+              <h3 class="post-card__title">IT/OT Convergence: A Practical Roadmap for Plant Managers</h3>
+              <span class="post-card__readmore">Read more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+            </div>
+          </a>
+          <a href="/blog/" class="post-card fade-up" style="transition-delay:0.2s;align-items:center;justify-content:center;background:var(--color-bg-light)">
+            <div class="post-card__body" style="text-align:center;padding:3rem 2rem">
+              <h3 class="post-card__title" style="font-size:1rem">View All Posts →</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/components.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
