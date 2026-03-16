@@ -1,3 +1,5 @@
+import PodcastEpisodes from "./PodcastEpisodes";
+
 const channels = [
   {
     label: "Manufacturing Hub Podcast",
@@ -136,6 +138,9 @@ export default function Media() {
             </a>
           ))}
         </div>
+
+        {/* Latest podcast episodes — renders only when YOUTUBE_API_KEY and YOUTUBE_CHANNEL_ID are set */}
+        <PodcastEpisodes />
       </div>
     </section>
   );
