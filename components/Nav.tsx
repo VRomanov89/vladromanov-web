@@ -9,8 +9,6 @@ const links = [
   { label: "Experience", href: "#experience" },
   { label: "Services", href: "#services" },
   { label: "Media", href: "#media" },
-  { label: "Insights", href: "#insights" },
-  { label: "Contact", href: "#contact" },
 ];
 
 export default function Nav() {
@@ -53,7 +51,7 @@ export default function Nav() {
           ))}
           <a
             href="#contact"
-            className="ml-2 px-4 py-2 text-[0.78rem] font-semibold tracking-[0.06em] uppercase text-[var(--color-surface)] bg-[var(--color-navy)] hover:bg-[var(--color-navy-dark)] active:scale-[0.97] transition-all duration-200 rounded-sm"
+            className="ml-2 px-4 py-2 text-[0.78rem] font-semibold tracking-[0.06em] uppercase text-[var(--color-surface)] bg-[var(--color-navy)] hover:bg-[var(--color-navy-dark)] active:scale-[0.97] transition-colors duration-200 rounded-sm"
           >
             Work With Me
           </a>

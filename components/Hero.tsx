@@ -32,11 +32,6 @@ export default function Hero() {
 
           {/* Left: Text */}
           <div className="order-2 lg:order-1">
-            {/* Label */}
-            <p className="section-label mb-6">
-              Montreal, Canada
-            </p>
-
             {/* Name */}
             <h1
               className="font-display text-[3.4rem] sm:text-[4.5rem] lg:text-[5.2rem] xl:text-[6rem] font-light leading-[0.95] tracking-[-0.02em] text-[var(--color-ink)] mb-6"

@@ -4,7 +4,6 @@ const snapshot = [
   { label: "Venture", value: "Founder, Joltek" },
   { label: "Venture", value: "Founder, SolisPLC" },
   { label: "Media", value: "Co-Host, Manufacturing Hub" },
-  { label: "Location", value: "Montreal, Canada" },
 ];
 
 export default function About() {

@@ -60,7 +60,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="flex items-center gap-4 mb-4">
-          <span className="section-label">08</span>
+          <span className="section-label">07</span>
           <div className="flex-1 h-[1px] bg-[var(--color-border)]" />
         </div>
 

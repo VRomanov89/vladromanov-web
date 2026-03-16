@@ -5,7 +5,6 @@ import Ventures from "@/components/Ventures";
 import Timeline from "@/components/Timeline";
 import Services from "@/components/Services";
 import Media from "@/components/Media";
-import Insights from "@/components/Insights";
 import Proof from "@/components/Proof";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -21,7 +20,6 @@ export default function Home() {
         <Timeline />
         <Services />
         <Media />
-        <Insights />
         <Proof />
         <Contact />
       </main>
