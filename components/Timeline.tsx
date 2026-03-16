@@ -1,51 +1,66 @@
 const entries = [
   {
-    company: "Procter & Gamble",
-    role: "Controls & Automation Engineer",
+    company: "DnA Ventures",
+    role: "Senior Industry Advisor",
+    period: "Apr 2025 – Present",
     summary:
-      "Developed and maintained control systems for high-speed manufacturing lines. Focused on PLC programming, HMI development, and driving operational reliability across production assets.",
-    themes: ["Controls Engineering", "PLC/HMI", "Plant Reliability"],
-    type: "corporate",
-  },
-  {
-    company: "Kraft Heinz",
-    role: "Automation & Controls Engineer",
-    summary:
-      "Led controls and automation initiatives across production facilities. Delivered SCADA upgrades, MES integration, and data visibility projects that improved operational decision-making on the plant floor.",
-    themes: ["SCADA", "MES Integration", "Data Visibility"],
-    type: "corporate",
-  },
-  {
-    company: "Post Holdings",
-    role: "Automation Lead",
-    summary:
-      "Drove plant modernization programs including OT infrastructure upgrades and digital operations initiatives. Led cross-functional teams to improve system reliability, traceability, and workforce technical capability.",
-    themes: ["Modernization", "OT Infrastructure", "IT/OT", "Technical Leadership"],
-    type: "corporate",
-  },
-  {
-    company: "Joltek",
-    role: "Founder & Principal Consultant",
-    summary:
-      "Founded a consulting firm to bring manufacturing modernization expertise directly to plant operators and leadership teams. Works with manufacturers on automation strategy, OT systems, digital operations, and execution capability.",
-    themes: ["Consulting", "Strategy", "Execution"],
+      "Providing senior advisory expertise in manufacturing, industrial automation, and operational strategy to support industry-facing initiatives.",
+    themes: ["Advisory", "Industry Leadership"],
     type: "venture",
   },
   {
-    company: "SolisPLC",
-    role: "Founder & Educator",
+    company: "Joltek",
+    role: "Director, Digital Transformation & Industrial Automation Consulting",
+    period: "Sep 2024 – Present",
     summary:
-      "Built an industrial automation training platform from the ground up to address the workforce skills gap in manufacturing. Serves engineers, technicians, and industrial teams with practical, hands-on technical education.",
-    themes: ["Education Platform", "PLC Training", "Workforce Development"],
+      "Leading consulting and execution support for manufacturers navigating modernization, automation strategy, IT/OT convergence, and operational excellence. Working with engineering leaders and plant executives to build scalable transformation programs.",
+    themes: ["Consulting", "IT/OT Strategy", "Digital Transformation"],
     type: "venture",
   },
   {
     company: "Manufacturing Hub",
     role: "Co-Host",
+    period: "Dec 2020 – Present",
     summary:
-      "Co-hosts a podcast and media platform dedicated to manufacturing, automation, technology, and career development. Engages practitioners, executives, and thought leaders in substantive industry conversations.",
+      "Co-hosting one of the few manufacturing-oriented live podcasts alongside Dave Griffith. Conversations with practitioners, executives, and technology leaders covering manufacturing, automation, digital transformation, and career development.",
     themes: ["Podcast", "Industry Media", "Thought Leadership"],
     type: "venture",
+  },
+  {
+    company: "SolisPLC",
+    role: "Founder",
+    period: "Apr 2017 – Present",
+    summary:
+      "Built an industrial automation training platform from the ground up. Published over 50 hours of video content, 100+ technical blog posts, and 4 Udemy courses with over 11,200 students. Trusted by manufacturers including Kroger, General Mills, and Danone.",
+    themes: ["Education Platform", "PLC Training", "Workforce Development"],
+    type: "venture",
+  },
+  {
+    company: "Kraft Heinz / Post Holdings",
+    role: "Senior Control Systems Engineer",
+    period: "Apr 2017 – Oct 2025",
+    summary:
+      "Led modernization, reliability, and automation programs across multiple manufacturing plants over eight years. Managed a new plant construction and commissioning project valued over USD 4MM for Post Holdings. Earlier role as Maintenance Supervisor with direct oversight of 26 mechanics and technicians.",
+    themes: ["Controls Engineering", "Plant Modernization", "Systems Integration", "Cross-Functional Leadership"],
+    type: "corporate",
+  },
+  {
+    company: "Procter & Gamble",
+    role: "Electrical Engineer | Band 1 Manager",
+    period: "Apr 2014 – Jun 2016",
+    summary:
+      "Led procurement, deployment, and validation of two manufacturing lines valued over USD 10MM — recognized as the fastest installation on site. Developed a control system algorithm for PocketPearl packaging and drove R&D efforts resulting in a 20% increase in production speed.",
+    themes: ["Controls Engineering", "PLC/HMI", "New Line Deployment"],
+    type: "corporate",
+  },
+  {
+    company: "Mitsubishi Electric",
+    role: "Electrical Field Engineer",
+    period: "Oct 2013 – Apr 2014",
+    summary:
+      "Field engineering role within the Elevator and Escalator Department. Troubleshot technical issues through electrical and mechanical prints, developed construction packages for modern elevator installations, and supervised field technicians on site.",
+    themes: ["Field Engineering", "Electrical Systems", "Construction"],
+    type: "corporate",
   },
 ];
 
@@ -70,7 +85,7 @@ export default function Timeline() {
             <em className="font-medium italic text-[var(--color-navy)]">Timeline</em>
           </h2>
           <p className="text-[0.85rem] text-[var(--color-ink-4)] max-w-xs leading-[1.6]">
-            Field-tested expertise across the largest names in manufacturing, built into two independent platforms.
+            Field-tested expertise across major manufacturers, built into three independent platforms.
           </p>
         </div>
 
@@ -78,7 +93,7 @@ export default function Timeline() {
         <div className="relative">
           {/* Vertical line */}
           <div
-            className="absolute left-0 lg:left-[200px] top-0 bottom-0 w-[1px] bg-[var(--color-border)] hidden sm:block"
+            className="absolute left-0 lg:left-[220px] top-0 bottom-0 w-[1px] bg-[var(--color-border)] hidden sm:block"
             aria-hidden="true"
           />
 
@@ -86,27 +101,30 @@ export default function Timeline() {
             {entries.map((entry, i) => (
               <div
                 key={i}
-                className="relative sm:grid sm:grid-cols-[200px_1fr] gap-10 pb-10"
+                className="relative sm:grid sm:grid-cols-[220px_1fr] gap-10 pb-12"
               >
-                {/* Left: Company (desktop) */}
+                {/* Left: Company + period (desktop) */}
                 <div className="hidden sm:flex flex-col items-end pr-10 pt-1">
                   <span
-                    className={`text-[0.75rem] font-semibold tracking-[0.08em] uppercase ${
+                    className={`text-[0.67rem] font-semibold tracking-[0.1em] uppercase mb-1 ${
                       entry.type === "venture"
                         ? "text-[var(--color-gold)]"
                         : "text-[var(--color-ink-4)]"
                     }`}
                   >
-                    {entry.type === "venture" ? "Founder" : "Industry"}
+                    {entry.type === "venture" ? "Venture" : "Industry"}
                   </span>
-                  <span className="font-display text-[1.05rem] font-medium text-[var(--color-ink-2)] text-right leading-tight mt-0.5">
+                  <span className="font-display text-[1.05rem] font-medium text-[var(--color-ink-2)] text-right leading-tight">
                     {entry.company}
+                  </span>
+                  <span className="text-[0.72rem] text-[var(--color-ink-4)] text-right mt-1.5 leading-tight">
+                    {entry.period}
                   </span>
                 </div>
 
                 {/* Dot */}
                 <div
-                  className="absolute left-[-5px] lg:left-[195px] top-2 w-[10px] h-[10px] rounded-full border-2 hidden sm:block"
+                  className="absolute left-[-5px] lg:left-[215px] top-2 w-[10px] h-[10px] rounded-full border-2 hidden sm:block"
                   style={{
                     borderColor:
                       entry.type === "venture"
@@ -119,10 +137,10 @@ export default function Timeline() {
 
                 {/* Right: Content */}
                 <div className="sm:pl-10">
-                  {/* Mobile: company name */}
+                  {/* Mobile: company + period */}
                   <div className="sm:hidden mb-3">
                     <span
-                      className={`text-[0.7rem] font-semibold tracking-[0.1em] uppercase ${
+                      className={`text-[0.7rem] font-semibold tracking-[0.1em] uppercase block mb-0.5 ${
                         entry.type === "venture"
                           ? "text-[var(--color-gold)]"
                           : "text-[var(--color-ink-4)]"
@@ -130,9 +148,12 @@ export default function Timeline() {
                     >
                       {entry.company}
                     </span>
+                    <span className="text-[0.72rem] text-[var(--color-ink-4)]">
+                      {entry.period}
+                    </span>
                   </div>
 
-                  <h3 className="font-display text-[1.4rem] font-medium text-[var(--color-ink)] leading-tight mb-2">
+                  <h3 className="font-display text-[1.35rem] font-medium text-[var(--color-ink)] leading-tight mb-2">
                     {entry.role}
                   </h3>
 

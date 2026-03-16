@@ -2,17 +2,17 @@ const corporate = [
   {
     name: "Procter & Gamble",
     context:
-      "Controls engineering, plant modernization, and automation systems across large-scale consumer goods operations.",
+      "Electrical engineering and controls work on high-speed manufacturing lines, including new line deployments valued over USD 10MM and a 20% production speed improvement through R&D.",
   },
   {
-    name: "Kraft Heinz",
+    name: "Kraft Heinz / Post Holdings",
     context:
-      "Automation and operational technology projects in high-throughput manufacturing environments.",
+      "Eight years leading control systems modernization, reliability programs, and a USD 4MM plant construction and commissioning project across multiple manufacturing facilities.",
   },
   {
-    name: "Post Holdings",
+    name: "Mitsubishi Electric",
     context:
-      "Technical leadership in manufacturing operations, systems integration, and cross-functional project execution.",
+      "Electrical field engineering within the Elevator and Escalator Department, including construction packages, field troubleshooting, and technician supervision.",
   },
 ];
 
