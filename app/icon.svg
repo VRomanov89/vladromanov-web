@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Navy brand background -->
+  <rect width="32" height="32" rx="6" fill="#1B3352"/>
+  <!-- Left arm of V: tapers from 5px at top to 3px at apex -->
+  <path d="M7.5,8 L12.5,8 L16,26 L13,26 Z" fill="#C0882E"/>
+  <!-- Right arm of V: tapers from 5px at top to 3px at apex -->
+  <path d="M16,26 L19.5,8 L24.5,8 L19,26 Z" fill="#C0882E"/>
+</svg>

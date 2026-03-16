@@ -66,6 +66,11 @@ export const metadata: Metadata = {
       "Electrical engineer, MBA, founder, and podcast host helping manufacturers improve systems, teams, and execution.",
     images: ["/vlad.avif"],
   },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   robots: {
     index: true,
     follow: true,
